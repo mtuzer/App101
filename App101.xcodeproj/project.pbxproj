@@ -18,7 +18,9 @@
 		D0565ABC23D7125700332DC5 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0565ABB23D7125700332DC5 /* DiscoverViewController.swift */; };
 		D0565ABE23D7126700332DC5 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0565ABD23D7126700332DC5 /* MoviesViewController.swift */; };
 		D0565AC023D721B100332DC5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0565ABF23D721B100332DC5 /* TabBarController.swift */; };
-		D0565AC223D72F6900332DC5 /* viewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0565AC123D72F6900332DC5 /* viewControllerExtension.swift */; };
+		D0565AC223D72F6900332DC5 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0565AC123D72F6900332DC5 /* UIViewControllerExtension.swift */; };
+		D07E4F1123E2B0E80015396E /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07E4F1023E2B0E80015396E /* UIImageViewExtension.swift */; };
+		D07E4F1323E2F8F30015396E /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07E4F1223E2F8F30015396E /* DataFetcher.swift */; };
 		D0A06E2423DDE42800114A95 /* MoviesViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A06E2323DDE42800114A95 /* MoviesViewControllerExtension.swift */; };
 		D0A06E2623DDE49200114A95 /* DiscoverViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A06E2523DDE49200114A95 /* DiscoverViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
@@ -36,7 +38,9 @@
 		D0565ABB23D7125700332DC5 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		D0565ABD23D7126700332DC5 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		D0565ABF23D721B100332DC5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		D0565AC123D72F6900332DC5 /* viewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewControllerExtension.swift; sourceTree = "<group>"; };
+		D0565AC123D72F6900332DC5 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		D07E4F1023E2B0E80015396E /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		D07E4F1223E2F8F30015396E /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 		D0A06E2323DDE42800114A95 /* MoviesViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewControllerExtension.swift; sourceTree = "<group>"; };
 		D0A06E2523DDE49200114A95 /* DiscoverViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewControllerExtension.swift; sourceTree = "<group>"; };
 		D84430345DED6694AF8073B5 /* Pods_App101.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App101.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				D01520A623D9CB6B005DA9FE /* StructsandClasses.swift */,
+				D07E4F1223E2F8F30015396E /* DataFetcher.swift */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -121,9 +126,10 @@
 		D0A06E2723DDE4B900114A95 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D0565AC123D72F6900332DC5 /* viewControllerExtension.swift */,
+				D0565AC123D72F6900332DC5 /* UIViewControllerExtension.swift */,
 				D0A06E2323DDE42800114A95 /* MoviesViewControllerExtension.swift */,
 				D0A06E2523DDE49200114A95 /* DiscoverViewControllerExtension.swift */,
+				D07E4F1023E2B0E80015396E /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,11 +256,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D07E4F1323E2F8F30015396E /* DataFetcher.swift in Sources */,
 				D0565ABE23D7126700332DC5 /* MoviesViewController.swift in Sources */,
 				D01520A723D9CB6B005DA9FE /* StructsandClasses.swift in Sources */,
+				D07E4F1123E2B0E80015396E /* UIImageViewExtension.swift in Sources */,
 				D01520A523D865EE005DA9FE /* MovieCell.swift in Sources */,
 				D0565ABC23D7125700332DC5 /* DiscoverViewController.swift in Sources */,
-				D0565AC223D72F6900332DC5 /* viewControllerExtension.swift in Sources */,
+				D0565AC223D72F6900332DC5 /* UIViewControllerExtension.swift in Sources */,
 				D01520A923DCA3F5005DA9FE /* PostCell.swift in Sources */,
 				D0565AC023D721B100332DC5 /* TabBarController.swift in Sources */,
 				D0565AA823D710BA00332DC5 /* AppDelegate.swift in Sources */,

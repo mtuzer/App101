@@ -74,25 +74,15 @@ extension MoviesViewController {
     }
     // MARK: Fetch Movies from URL
     func fetchMovies() {
-        let decoder = JSONDecoder()
-        let session = URLSession(configuration: .default)
-        session.dataTask(with: URL(string: Constants.movieURL)!) { (data, _, error) in
-            guard error == nil else {
-                print("XXX") // can be handled for internet connection problems
-                return
+        let dataFetcher = DataFetcher()
+        dataFetcher.fetchData(urlString: Constants.movieURL) { (movies: [Movie]) in
+            self.popularMovies = movies.filter({$0.isPopular == true}).shuffled() // filter popular movies and shuffle
+            self.recommendedMovies = movies.filter({$0.isRecommended == true}).shuffled() // filter recommended movies and shuffle
+            DispatchQueue.main.async {
+                self.collectionViewPopular.reloadData()
+                self.collectionViewRecommended.reloadData()
             }
-            if let data = data {
-                guard let decodedData = try? decoder.decode([Movie].self, from: data) else {
-                    return
-                }
-                self.popularMovies = decodedData.filter({$0.isPopular == true}).shuffled() // filter popular movies and shuffle
-                self.recommendedMovies = decodedData.filter({$0.isRecommended == true}).shuffled() // filter recommended movies and shuffle
-                DispatchQueue.main.async {
-                    self.collectionViewPopular.reloadData()
-                    self.collectionViewRecommended.reloadData()
-                }
-            }
-        }.resume()
+        }
     }
     // MARK: CollectionView Preparation for UI
     func setupCollectionViews() {

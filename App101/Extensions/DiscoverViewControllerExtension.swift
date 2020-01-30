@@ -21,23 +21,13 @@ extension DiscoverViewController {
     }
     // MARK: Fetch Posts from URL
     func fetchPosts() {
-        let decoder = JSONDecoder()
-        let session = URLSession(configuration: .default)
-        session.dataTask(with: URL(string: Constants.discoverURL)!) { (data, _, error) in
-            guard error == nil else {
-                print("XXX") // can be handled for internet connection problems
-                return
+        let dataFetcher = DataFetcher()
+        dataFetcher.fetchData(urlString: Constants.discoverURL) { (posts: [Post]) in
+            self.posts = posts
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
             }
-            if let data = data {
-                guard let decodedData = try? decoder.decode([Post].self, from: data) else {
-                    return
-                }
-                self.posts = decodedData
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            }
-        }.resume()
+        }
     }
     // MARK: CollectionView Preparation for UI
     func setupCollectionView() {
